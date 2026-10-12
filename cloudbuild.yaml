@@ -1,0 +1,12 @@
+# Construye una imagen con Cloud Build y la sube a Artifact Registry. No necesitas Docker local.
+#
+# Uso, desde la raíz del repositorio:
+#   gcloud builds submit --config cloudbuild.yaml \
+#     --substitutions=_DOCKERFILE=docker/pipeline.Dockerfile,_IMAGEN=us-central1-docker.pkg.dev/PROYECTO/costos/pipeline:v1
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ["build", "-f", "${_DOCKERFILE}", "-t", "${_IMAGEN}", "."]
+images:
+  - "${_IMAGEN}"
+options:
+  logging: CLOUD_LOGGING_ONLY

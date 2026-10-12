@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "costos-equipos"
+version = "0.1.0"
+description = "Pronóstico del costo de equipos a partir de precios de materias primas"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas>=2.2",
+  "numpy>=1.26",
+  "statsmodels>=0.14",
+]
+
+[project.optional-dependencies]
+# Lo que necesita el pipeline mensual (Cloud Run job)
+pipeline = [
+  "matplotlib>=3.8",
+  "pyarrow>=15",
+  "gcsfs>=2024.2",
+  "google-cloud-bigquery>=3.20",
+]
+# Lo que necesita el agente (Cloud Run service)
+agente = [
+  "fastapi>=0.110",
+  "uvicorn[standard]>=0.29",
+  "google-cloud-bigquery>=3.20",
+  "google-genai>=1.0",
+]
+# Lo que necesita el dashboard interactivo (Streamlit)
+dashboard = [
+  "streamlit>=1.35",
+  "plotly>=5.20",
+  "pandas>=2.2",
+  "requests>=2.31",
+  "google-cloud-bigquery>=3.20",
+  "db-dtypes>=1.2",
+  "pyarrow>=15",
+]
+# Herramientas de desarrollo: pruebas, lint y notebooks
+dev = [
+  "pytest>=8",
+  "ruff>=0.5",
+  "httpx>=0.27",
+  "nbformat>=5.10",
+  "nbconvert>=7.16",
+  "ipykernel>=6.29",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+# El formateador controla el largo de línea; se permiten textos largos como prompts y docstrings.
+ignore = ["E501"]

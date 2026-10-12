@@ -1,0 +1,22 @@
+# Integración continua: cada push y cada PR corren el lint y las pruebas.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Instalar
+        run: |
+          uv venv --python 3.12 .venv
+          uv pip install --python .venv/bin/python -e ".[pipeline,agente,dev]"
+      - name: Lint
+        run: .venv/bin/python -m ruff check src tests
+      - name: Pruebas
+        run: .venv/bin/python -m pytest

@@ -1,0 +1,65 @@
+{
+  "Equipo1": {
+    "equipo": "Equipo1",
+    "variables": [
+      "X",
+      "Y"
+    ],
+    "coeficientes": {
+      "const": -0.045319,
+      "X": 0.198188,
+      "Y": 0.800328
+    },
+    "p_valores": {
+      "const": 0.938882,
+      "X": 0.0,
+      "Y": 0.0
+    },
+    "r2": 0.999744,
+    "mape_prueba": 0.338,
+    "p_cointegracion": 0.0,
+    "vif": {
+      "X": 1.327,
+      "Y": 1.327
+    },
+    "ultimo_mes": "2023-08",
+    "ultimos_precios": {
+      "X": 85.1043,
+      "Y": 556.3039
+    }
+  },
+  "Equipo2": {
+    "equipo": "Equipo2",
+    "variables": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "coeficientes": {
+      "const": 0.635684,
+      "X": 0.335297,
+      "Y": 0.335257,
+      "Z": 0.332239
+    },
+    "p_valores": {
+      "const": 0.547829,
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "r2": 0.999749,
+    "mape_prueba": 0.179,
+    "p_cointegracion": 0.0,
+    "vif": {
+      "X": 1.346,
+      "Y": 3.822,
+      "Z": 3.735
+    },
+    "ultimo_mes": "2023-08",
+    "ultimos_precios": {
+      "X": 85.1043,
+      "Y": 556.3039,
+      "Z": 2133.0217
+    }
+  }
+}

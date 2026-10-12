@@ -1,0 +1,15 @@
+equipo,variables,n_variables,r2_entrenamiento,mape_prueba,elegida
+Equipo1,X+Y+Z,3,0.9997,0.336,False
+Equipo1,X+Y,2,0.9997,0.338,True
+Equipo1,Y,1,0.9979,0.506,False
+Equipo1,Y+Z,2,0.998,0.593,False
+Equipo1,X,1,0.2842,14.645,False
+Equipo1,X+Z,2,0.75,15.016,False
+Equipo1,Z,1,0.7354,16.26,False
+Equipo2,X+Y+Z,3,0.9996,0.179,True
+Equipo2,Y+Z,2,0.9966,0.494,False
+Equipo2,X+Z,2,0.9727,3.027,False
+Equipo2,Z,1,0.966,3.606,False
+Equipo2,Y,1,0.8661,10.509,False
+Equipo2,X+Y,2,0.8792,10.539,False
+Equipo2,X,1,0.3157,18.739,False

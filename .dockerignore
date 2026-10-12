@@ -1,0 +1,13 @@
+# Lo que NO entra a la imagen: solo hacen falta src, docker y pyproject.toml
+.git/
+.gitignore
+.venv/
+**/__pycache__/
+.pytest_cache/
+.ruff_cache/
+Datos/
+Resultados/
+notebooks/
+docs/
+tests/
+.github/

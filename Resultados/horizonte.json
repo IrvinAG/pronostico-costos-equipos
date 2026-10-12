@@ -1,0 +1,8 @@
+{
+  "ancho_maximo_pct": 30.0,
+  "por_equipo": {
+    "Equipo1": 2,
+    "Equipo2": 4
+  },
+  "recomendado_meses": 2
+}
